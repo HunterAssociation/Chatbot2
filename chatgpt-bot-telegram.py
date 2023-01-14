@@ -1,9 +1,12 @@
+import pyrogram
+from pyrogram import Client, filters
+from pyrogram.types import Message
 import telebot
 import openai
 
-openai.api_key = "TU SECRET KEY DE OPENAI"
+openai.api_key = "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"
 
-bot = telebot.TeleBot(token="EL TOKEN QUE TE DA BOTFATHER DE TELEGRAM")
+bot = telebot.TeleBot(token="5943097003:AAFAYW8r-EBn3yWIqqELWVivGxHLggnt0dI")
 
 def generate_response(prompt):
     response = openai.Completion.create(
@@ -32,5 +35,9 @@ def handle_message(message):
     bot.send_message(chat_id=message.chat.id, text=response)
     #else:
         #bot.send_message(chat_id=message.chat.id, text="You are not authorized to receive responses from this bot.")
+
+@Client.on_message(filters.command(["start"]))
+async def start(client, message):
+        await message.reply("Halo...")
 
 bot.polling()
