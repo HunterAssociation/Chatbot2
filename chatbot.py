@@ -4,7 +4,7 @@ from pyrogram.types import Message
 import telebot
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 bot = telebot.TeleBot(token="5943097003:AAFAYW8r-EBn3yWIqqELWVivGxHLggnt0dI")
 
