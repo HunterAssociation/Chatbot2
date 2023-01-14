@@ -1,6 +1,3 @@
-import pyrogram
-from pyrogram import Client, filters
-from pyrogram.types import Message
 import telebot
 import openai
 
@@ -35,9 +32,5 @@ def handle_message(message):
     bot.send_message(chat_id=message.chat.id, text=response)
     #else:
         #bot.send_message(chat_id=message.chat.id, text="You are not authorized to receive responses from this bot.")
-
-@Client.on_message(filters.command(["start"]))
-async def start(client, message):
-        await message.reply("Halo...")
 
 bot.polling()
